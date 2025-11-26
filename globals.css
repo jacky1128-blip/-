@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --color-page: #eef9dd;
+  --color-card: #ffffff;
+  --color-card-muted: #f3f7e6;
+  --color-border: #d3e2bf;
+  --color-text: #0b2111;
+  --color-text-muted: #567158;
+  --color-accent: #5e9c24;
+  --color-accent-strong: #365d0e;
+  --color-dark-page: #050b17;
+  --color-dark-card: #101b33;
+  --color-dark-card-muted: #1a2942;
+  --color-dark-border: #1f3052;
+  --color-dark-text: #f4f8ff;
+  --color-dark-text-muted: #9bb6d3;
+  --color-dark-accent: #71d8ff;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  font-family: var(--font-sans), "Pretendard", "SUIT", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-page);
+  color: var(--color-text);
+  min-height: 100vh;
+  transition: background-color 200ms ease;
+}
+
+body.theme-light {
+  background-color: var(--color-page);
+  color: var(--color-text);
+}
+
+body.theme-dark {
+  background-color: var(--color-dark-page);
+  color: var(--color-dark-text);
+}
+
+.glass-panel {
+  border-radius: 1.5rem;
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-card) 88%, transparent);
+  box-shadow: 0 25px 70px color-mix(in srgb, #90aa7d 20%, transparent);
+}
+
+.theme-dark .glass-panel {
+  border-color: var(--color-dark-border);
+  background: color-mix(in srgb, var(--color-dark-card) 92%, transparent);
+  box-shadow: 0 25px 70px color-mix(in srgb, #000000 60%, transparent);
+}
+
+.card-surface {
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+}
+
+.theme-dark .card-surface {
+  border-color: var(--color-dark-border);
+  background: var(--color-dark-card);
+}
+
+.pill {
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card-muted);
+}
+
+.theme-dark .pill {
+  border-color: var(--color-dark-border);
+  background-color: color-mix(in srgb, var(--color-dark-card-muted) 80%, transparent);
+}
+
+.section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.theme-dark .section-title {
+  color: var(--color-dark-text-muted);
+}
+
+.moneytoring-scroll {
+  scrollbar-color: var(--color-accent) transparent;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
